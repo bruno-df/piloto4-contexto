@@ -1,0 +1,53 @@
+# Execução dos testes (cópia 'depois')
+$ python3 --version
+Python 3.13.18
+$ python3 -m unittest discover -s tests -v
+test_cabecalho_publico (test_servico.RegressaoServico.test_cabecalho_publico) ... ok
+test_dias_invalidos (test_servico.RegressaoServico.test_dias_invalidos) ... ok
+test_documentos_invalidos (test_servico.RegressaoServico.test_documentos_invalidos) ... ok
+test_lote_contrato_estrutura_e_ordem (test_servico.RegressaoServico.test_lote_contrato_estrutura_e_ordem) ... ok
+test_normalizacao_documentos (test_servico.RegressaoServico.test_normalizacao_documentos) ... ok
+test_protocolo_duplicado (test_servico.RegressaoServico.test_protocolo_duplicado) ... ok
+test_relatorio_sem_newline_final (test_servico.RegressaoServico.test_relatorio_sem_newline_final) ... ok
+test_vazio_valido (test_servico.RegressaoServico.test_vazio_valido) ... ok
+test_CA01_precedencia_documental (test_triagem.Caracterizacao.test_CA01_precedencia_documental) ... ok
+test_CA02_limite_30 (test_triagem.Caracterizacao.test_CA02_limite_30) ... ok
+test_CA03_apos_limite (test_triagem.Caracterizacao.test_CA03_apos_limite) ... ok
+test_CA04_antes_limite (test_triagem.Caracterizacao.test_CA04_antes_limite) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+código de saída: 0
+
+# Comando inferido sem CLAUDE.md (cópia 'sem')
+$ python3 -m unittest discover
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+NO TESTS RAN
+código de saída: 5
+
+# Leitura do CSV com e sem utf-8-sig
+utf-8 -> ValueError: cabecalho invalido
+utf-8-sig -> LAB-001:NO_PRAZO | LAB-002:NO_PRAZO | LAB-003:NO_PRAZO | LAB-004:NO_PRAZO | LAB-005:ATRASADA | LAB-006:PENDENTE | LAB-007:PENDENTE | LAB-008:NO_PRAZO
+
+# Execuções do agente (claude -p, somente Read/Grep/Glob, sem MCP)
+2.1.318 (Claude Code)
+sem: modelo claude-sonnet-5-5 | turnos 19 | chamadas de ferramenta 18 | duração 30 s
+antes: modelo claude-sonnet-5-5 | turnos 15 | chamadas de ferramenta 14 | duração 29 s
+depois (versão testada 1, com a linha sobre comparacao-offline): modelo claude-sonnet-5-5 | turnos 14 | chamadas de ferramenta 13 | duração 28 s
+depois (versão final): modelo claude-sonnet-5-5 | turnos 12 | chamadas de ferramenta 11 | duração 21 s
+
+# SHA-256
+56a3718d924e70dbafc522c9705826279ca903cb4e93a402a80048f7898dc99f  CLAUDE.md (original)
+6e2d5623b279b81c21a17fd400123c872a675057ad4a2e82e655da53b59fba5e  CLAUDE.md (revisado, versão testada 1)
+8ef6b98ab25a46a4685dea429795337cb0436000dcb14093525c118c19da1698  CLAUDE.md (revisado, versão final)
+7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6  src/__init__.py
+94bf91097c1be7a5f38cdb095bb14adce1099985247075d00c35327180e19e06  src/servico.py
+446cac752e69ce9d2d0b7a6b64f98a3a2605db435c404508f5449d330e5bae0f  src/triagem.py
+66cb28fd06b60bc652c3d7feacf0f25dcdbe04354712c529e0ad9b4f10dd8946  tests/test_servico.py
+a86fb61f287e961a060d45ba9ce02bff757512bc41fa5eb86b032463354597dd  tests/test_triagem.py
+48bede8f290f4836baf9f4c53b73c67910874ef062b3a72b722c632dea6b7393  dados/solicitacoes.csv

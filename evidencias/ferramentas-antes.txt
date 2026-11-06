@@ -1,0 +1,14 @@
+Glob {"pattern": "**/*"}
+Read {"file_path": "/home/claude/work/exp/antes/docs/context-pack.md"}
+Read {"file_path": "/home/claude/work/exp/antes/docs/demanda.md"}
+Read {"file_path": "/home/claude/work/exp/antes/src/triagem.py"}
+Read {"file_path": "/home/claude/work/exp/antes/src/servico.py"}
+Read {"file_path": "/home/claude/work/exp/antes/dados/solicitacoes.csv"}
+Read {"file_path": "/home/claude/work/exp/antes/.mcp.json"}
+Read {"file_path": "/home/claude/work/exp/antes/.claude/settings.json"}
+Read {"file_path": "/home/claude/work/exp/antes/docs/comparacao-offline.md"}
+Read {"file_path": "/home/claude/work/exp/antes/docs/conflito.md"}
+Read {"file_path": "/home/claude/work/exp/antes/docs/plano.md"}
+Read {"file_path": "/home/claude/work/exp/antes/docs/arquitetura.md"}
+Read {"file_path": "/home/claude/work/exp/antes/tests/test_triagem.py"}
+Read {"file_path": "/home/claude/work/exp/antes/tests/test_servico.py"}
